@@ -1,0 +1,17 @@
+[type=reset], [type=submit], html [type=button] {
+    -webkit-appearance: button;
+	overflow: visible !important;
+    width: 80% !important;
+    padding: 12px 10px !important;
+    margin: 4px 0 !important;
+    box-sizing: border-box !important;
+    border: 1px solid #ECB0AE !important;
+    background-color: #ECB0AE;
+    font-family: gotham-book !important;
+    font-weight: 500;
+    color:#fff;
+    text-align: center;
+	}
+	.form-control {
+    width: 80%;
+	}

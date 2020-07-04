@@ -1,0 +1,22 @@
+hr.onepixel {
+    border-bottom: 1px solid #000;
+    height: 0px;
+    margin-top: 5px;
+	}
+	[type=reset], [type=submit], html [type=button] {
+    -webkit-appearance: button;
+	overflow: visible !important;
+    width: 80% !important;
+    padding: 12px 10px !important;
+    margin: 4px 0 !important;
+    box-sizing: border-box !important;
+    border: 1px solid #d1a1a1 !important;
+    background-color: #d1a1a1;
+    font-family: gotham-book !important;
+    font-weight: 500;
+    color:#fff;
+    text-align: center;
+	}
+	.form-control {
+    width: 80%;
+	}

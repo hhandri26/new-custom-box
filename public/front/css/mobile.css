@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Viga&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap");
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Gotham';
+}
+
+h2 {
+  font-size: 18px !important;
+}
+
+.mycontainer {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Pacifico' !important;
+}
+
+.c1{font-size:140px; color: #ECB0AE !important; padding-left: 60px;}
+.c2{font-size: 28px; color: #5B5C60; margin-top: -60px; padding-left: 80px; letter-spacing: 1px; font-family: "gotham"; line-height: 23px;}
+.c3{font-size: 14px; color: #5B5C60; padding-top:10px ; padding-left: 0;  letter-spacing: 1px; line-height: 16px; text-align: justify; width : 100%;}
+.c4{font-size: 14px; color: #ECB0AE !important; padding-left: 0; letter-spacing: 1px; line-height: 16px; text-align: justify;}
+
+.navbar .icon-btn {
+  background: none;
+  border: none;
+}
+
+.navbar .icon-btn i {
+  font-size: 18px;
+}
+
+.grid-custom {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+}
+.step-section {
+  width: 100%;
+}
+
+.step-section .steps {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.step-section .steps .line {
+  position: relative;
+  top: 12px;
+  z-index: -1;
+  left: 0px;
+  width: 200px;
+  height: 2px;
+  background: #C4C4C4;
+}
+
+.step-section .steps .circles .step-text {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: -30px;
+  font-size: 14px;
+}
+
+.step-section .steps .circles .circle {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.step-section .steps .circles .circle.active {
+  -webkit-box-shadow: 0px 0px 10px rgba(90, 149, 237, 0.8);
+          box-shadow: 0px 0px 10px rgba(90, 149, 237, 0.8);
+  position: relative;
+  background: #5A95ED;
+}
+
+.step-section .step__details__image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.step-section .step__details__image img {
+  max-width: 400px;
+  width: 100%;
+}
+
+.step-section .step__details__content p:first-child {
+  font-size: 20px;
+}
+
+.step-section .step__details__content .step-by-step {
+  font-family: 'Poppins' !important;
+}
+
+.step-section .step__details__content .step-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Poppins';
+}
+
+.client-section {
+  padding: 30px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #efe5dc !important;
+}
+
+.client-section h2 {
+  color: black !important;
+}
+
+.client-section h3 {
+  color: #ECB0AE !important;
+  font-size : 160px;
+  margin-left: -50px;
+  margin-top: -10px;
+  letter-spacing: -2px;
+  font-family: "gotham";
+}
+
+.client-section .clients {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.client-section .clients::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #E8E7E7;
+  color: #000;
+}
+
+footer .about-col {
+  color: white;
+}
+
+footer .about-col a {
+  color: white;
+  font-family: 'gotham';
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+footer .about-col a:hover {
+  text-decoration: none;
+}
+
+footer .about-col .btn-track {
+  border-radius: 20px;
+  padding: 7px 25px;
+  font-family: 'gotham';
+}
+
+footer .about-us-col, footer .contact-us-col {
+  margin: 20px 0px;
+  height: 20vh;
+}
+
+footer .subscribe-col {
+  font-family: 'gotham' !important;
+}
+
+footer .subscribe-col input {
+  width: 120%;
+}
+
+body {
+  background: #efefef;
+  overflow-x: hidden !important;
+}
+
+.bottom-nav {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  background: white;
+}
+
+.bottom-nav ul {
+  list-style-type: none !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.bottom-nav ul li #product-nav {
+  margin-top: 2.5px;
+}
+
+.bottom-nav ul li a {
+  color: #C4C4C4;
+  display: block !important;
+  font-size: 13px;
+  text-decoration: none;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.bottom-nav ul li a #product-icon {
+  margin-bottom: 5px;
+}
+
+.bottom-nav ul li a img {
+  display: block;
+  width: 25px;
+  margin: 0 auto;
+}
+
+.bottom-nav ul li a:hover {
+  color: black;
+}
+
+.bottom-nav ul li a:hover img {
+  -webkit-filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(167deg) brightness(0%) contrast(0%);
+          filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(167deg) brightness(0%) contrast(0%);
+}
+
+.mycard {
+  width: 100%;
+  border-radius: 12px;
+  background: white;
+  position: relative;
+}
+
+.mycard:hover .overlay-card {
+  background: rgba(196, 196, 196, 0.5);
+  z-index: 1;
+}
+
+.mycard .overlay-card {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0);
+  z-index: -2;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.mycard__image {
+  border-radius: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mycard__image img {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+.mycard__detail {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+.mycard__detail__name {
+  font-size: 16px !important;
+  padding-left: 25px;
+}
+
+.mycard__detail__price {
+  font-size: 13px !important;
+  font-family: 'Gotham' !important;
+  font-weight: 400;
+  padding-left: 25px;
+}
+/*# sourceMappingURL=main.css.map */
