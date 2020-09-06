@@ -41,7 +41,12 @@
                                 </div>
                             </div>
 
-        
+                            <div class="form-group">
+                                <label for="desc" class="col-sm-3 control-label1 require">* Suitable</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="suitable" v-model="data.suitable">
+                                </div>
+                            </div>
                             
                             <div class="form-group">
                                 <label for="desc" class="col-sm-3 control-label1 "> IDN</label>
@@ -58,62 +63,15 @@
                                 </div>
                                
                             </div>
+                            
                             <div class="form-group">
-                                <label for="desc" class="col-sm-3 control-label1 "> Pricing</label>                               
+                                <label for="desc" class="col-sm-3 control-label1 "> Link Produk</label>   
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="suitable" v-model="data.suitable">
+                                </div>                            
                             </div>
                            
-                            <div class="form-group">
-                                <table id="tbl1" class="table table-hover table-condensed table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Long</th>
-                                            <th>Width</th>
-                                            <th>Height</th>
-                                            <th>weight</th>
-                                            <th>Price</th>
-                                            <th>Qty Grosir</th>
-                                            <th>Grosir Price</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- v-for sub -->
-                                        <tr v-for="(rowsub, index) in data2">
-                                            <td>
-                                                <input type="number" v-model="rowsub.panjang" class="form-control" class="form-control">
-                                            </td>
-                                            <td>
-                                                <input type="number" v-model="rowsub.lebar" class="form-control" class="form-control">
-                                            </td>
-                                            <td>
-                                                <input type="number" v-model="rowsub.tinggi" class="form-control" class="form-control">
-                                            </td>
-                                            <td>
-                                                <input type="number" v-model="rowsub.berat" class="form-control" class="form-control">
-                                            </td>
-                                            <td>
-                                                <input type="number"  v-model="rowsub.harga" class="form-control" class="form-control">
-                                            </td>
-                                            <td>
-                                                <input type="number"  v-model="rowsub.qty_grosir" class="form-control" class="form-control">
-                                            </td>
-                                            <td>
-                                                <input type="number"  v-model="rowsub.harga_grosir" class="form-control" class="form-control">  
-                                            </td>
-                                            <td>
-                                                <a v-if="rowsub.id" v-on:click="do_delete_sub('t_product_harga',rowsub.id)" class="btn btn-danger "><i class="fa fa-remove">Deleted</i></a>
-                                                <a v-else v-on:click="doRemoveSub('data2',index)" class="btn btn-danger "><i class="fa fa-remove"></i></a>
-                                            </td>
-                                        </tr>
-                                        <!-- end -->
-                                        <tr>
-                                            <td style="text-align:right;" colspan="8">
-                                                <a v-on:click="addRowSub('data2')" class="btn btn-info"><i class="fa fa-plus"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                         
                             <div class="form-group">
                                 <label for="desc" class="col-sm-3 control-label1 "> Gallery Produk</label>                               
                             </div>
@@ -176,6 +134,7 @@ var form = new Vue({
             desc_eng:'',
             desc  :'',
             location:"{{asset('public/img/df.jpg')}}",
+            suitable:''
         },
         data2:[],
         data3:[],
@@ -202,7 +161,7 @@ var form = new Vue({
             var formData = new FormData();
             formData.append('file',file);
             formData.append('_token', CSRF_TOKEN);
-            formData.append('folder','gallery_product');
+            formData.append('folder','gallery_models');
             var headers= {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -222,7 +181,7 @@ var form = new Vue({
           
             formData.append('file', this.file);
             formData.append('_token', CSRF_TOKEN);
-            formData.append('folder','product');
+            formData.append('folder','models');
            
             
             var headers= {
@@ -243,7 +202,7 @@ var form = new Vue({
             this[target].push({})           
         },
         doSave:function(){
-            var url_save = "{{route('product_add')}}";
+            var url_save = "{{route('models_backend_add')}}";
             var id       = $('#id').val();
             var data    = {
                             id    :id, 
@@ -265,9 +224,8 @@ var form = new Vue({
     mounted:function() {
         var id                  = $('#id').val();   
         if(id>0){
-            axios.get('{{route("product_edit")}}?id='+id).then(function(resp){
+            axios.get('{{route("models_backend_edit")}}?id='+id).then(function(resp){
             form.data = resp.data.data1;
-            form.data2= resp.data.data2;
             form.data3= resp.data.data3;
         })
         .catch(function(err){

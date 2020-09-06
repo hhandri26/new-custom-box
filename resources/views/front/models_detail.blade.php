@@ -124,7 +124,7 @@
                                                 </div>
                                                 <div class="container">
                                                     <div class="form-metro">
-                                                        <a :href="'{{route('product_detail')}}?id='+ header.id" class="btn" style="background-color: #fff; border-color: #ECB0AE;">Shop Now</a>
+                                                        <a href="{{route('shop')}}" class="btn" style="background-color: #fff; border-color: #ECB0AE;">Shop Now</a>
                                                     </div>
                                                 </div>
                                                 
@@ -185,52 +185,8 @@ var ProductDetail = new Vue({
     computed: {
     },
     methods: {
-        add_qty:function(){
-            ProductDetail.data.qty += 1;
-            ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
-            
-
-        },
-        min_qty:function(){
-            ProductDetail.data.qty -= 1;
-            ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
-
-        },
-        addToCart:function(){
-            if(ProductDetail.data.sub_total!==''){
-               
-                var existing = JSON.parse(localStorage.getItem("cart"));
-                if(existing!== null){
-                    var b=[{}];
-                    b =JSON.parse(localStorage.getItem("cart")) || [];
-                    b.push(ProductDetail.data);
-                    localStorage.setItem("cart",JSON.stringify(b));
-
-                }else{
-                    localStorage.setItem("cart",JSON.stringify([ProductDetail.data]));
-
-                }
-                
-                
-                Swal.fire(
-                    'Success',
-                    'Item add to cart',
-                    'success'
-                ).then((value) => {
-                    ProductDetail.data.qty='';
-                    ProductDetail.data.harga='';
-                    ProductDetail.data.berat='';
-                    ProductDetail.data.sub_total='';
-                
-                    ProductDetail.data.product_id='';
-                    window.location.href = ""
-                });
-
-
-            }
-            
-
-        },
+        
+      
        
        
     },
@@ -239,16 +195,14 @@ var ProductDetail = new Vue({
     mounted: function () {
       
         var curId = getParameterByName('id');
-        this.data.product_id = curId;
+       
         if(curId == null){
             curId = 1;
         }
         
-        axios.get("{{route('detail_product_front')}}?id="+curId)
+        axios.get("{{route('detail_models_front')}}?id="+curId)
         .then(function (data) {
             ProductDetail.header = data.data.header;
-            ProductDetail.data.harga = data.data.header.harga;
-            ProductDetail.data.berat = data.data.header.berat;
 
             var no = 0;
             $.each(data.data.detail, function (key, value) {

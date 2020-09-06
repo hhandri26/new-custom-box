@@ -48,19 +48,19 @@ $dat    =[];
                             <div class="form-group">
                                 <label for="nama" class="col-md-3 control-label1">Panjang</label>
                                 <div class="col-md-9">
-                                <input  type="number" id="p" name="p" class="form-control" value="@if($id>0){{ $get['p']}} @endif"/>
+                                <input  type="text" id="p" name="p" class="form-control" value="@if($id>0){{ $get['p']}} @endif"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="nama" class="col-md-3 control-label1">Lebar</label>
                                 <div class="col-md-9">
-                                <input  type="number" id="l" name="l" class="form-control" value="@if($id>0){{ $get['l']}} @endif"/>
+                                <input  type="text" id="l" name="l" class="form-control" value="@if($id>0){{ $get['l']}} @endif"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="nama" class="col-md-3 control-label1">Tinggi</label>
                                 <div class="col-md-9">
-                                <input  type="number" id="t" name="t" class="form-control" value="@if($id>0){{ $get['t']}} @endif"/>
+                                <input  type="text" id="t" name="t" class="form-control" value="@if($id>0){{ $get['t']}} @endif"/>
                                 </div>
                             </div>
                             <div class="form-group">

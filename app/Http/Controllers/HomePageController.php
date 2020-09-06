@@ -205,5 +205,32 @@ class HomePageController extends Controller
     }
 
 
+    public function models_backend(){
+        $data['table']      = HomeModels::get_models_backend();
+        return view('models/table',$data);
+    }
+
+    public function models_backend_form(){
+        return view('models/form');
+
+    }
+    public function models_backend_add(Request $request){
+        return HomeModels::models_backend_add($request);
+    }
+
+    public function models_form_edit(){
+        $data['get']      = HomeModels::get_models_backend();
+        return view('models/form',$data);
+
+    }
+
+    public function models_backend_edit(){
+        return HomeModels::get_models_backend();
+
+    }
+
+   
+
+
     
 }

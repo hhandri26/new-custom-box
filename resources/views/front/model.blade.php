@@ -13,29 +13,30 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div v-for="row in gallery" class="col-md-3 p-t-30">
+					@foreach($models as $row)
+					<div class="col-md-3 p-t-30">
 						<!-- Block1 -->
 						<div class="blo1">
 							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
-								<a v-bind:href="'{{route('models_detail')}}?id='+ row.id"><img v-bind:src="row.img"></a>
+								<a href="{{route('models_detail')}}?id={{$row->id}}"><img src="{{asset('/public/images/models/'.$row->img)}}"></a>
 							</div>
 
 							<div class="wrap-text-blo1 p-t-35">
-								<a v-bind:href="'{{route('product_detail')}}?id='+ row.id"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-									@{{row.title}}
+								<a href="{{route('models_detail')}}?id={{$row->id}}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
+								{{$row->title}}
 								</h4></a>
 
 								<p class="m-b-20">
 									<span v-if="localStorage.lang == 'Eng'">
-										@{{row.desc_eng.substring(0,50)+"..."}}
+									{{substr($row->desc_eng, 0, 60) . '...'}}
 									</span>
 									<span v-else>
-										@{{row.desc.substring(0,50)+"..."}}
+									{{substr($row->desc, 0, 60) . '...'}}
 										
 									</span>
 								</p>
 								<center>
-								<a v-bind:href="'{{route('product_detail')}}?id='+ row.id" class="txt4">
+								<a href="{{route('models_detail')}}?id={{$row->id}}" class="txt4">
 									<u>More Detail</u>
 									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
 								</a>
@@ -43,6 +44,7 @@
 							</div>
 						</div>
 					</div>
+					@endforeach
 					
 				</div>
 			</div>
@@ -64,10 +66,7 @@ var Shop = new Vue({
     methods: {
     },
     created: function () {
-          axios.get("{{route('product_front')}}")
-        .then(function (data) {
-            Shop.gallery = data.data.data;
-        });
+         
     },
     mounted: function () {  
     },

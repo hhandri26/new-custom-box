@@ -131,7 +131,6 @@ class HomeModels extends Model
                                         'desc'   	=>$data1['desc'],
                                         'desc_eng'	=>$data1['desc_eng'],
 										'location'	=>$data1['location'],
-										'suitable'	=>$data1['suitable'],
                                         'created_at'=>$adddate
                                 ]);
                 $get_id = $id;
@@ -606,6 +605,109 @@ class HomeModels extends Model
 		    $t_array['msg']=$e->getMessage();
 		    return $t_array;
 		}
-    }
+	}
+	
+	public static function get_models_backend(){
+		$id 			= request()->id;
+        if($id>0){
+            $data1 = DB::table('t_models')
+                ->select('*')
+				->where('id',$id)
+                ->first();
+           
+            $data3 = DB::table('t_models_gallery')
+                ->select('*')
+                ->where('id_models',$id)
+                ->get();
+            
+            $json_array['data1'] = $data1;
+            $json_array['data3'] = $data3;
+
+            
+            return $json_array;
+
+        }else{
+            $data1 = DB::table('t_models')
+                ->select('*')
+                ->get();
+            
+                return $data1;
+
+        }	
+		
+
+	}
+
+	public static function models_backend_add($request){
+		try{
+			$adddate    = date("Y-m-d H:i:s");
+            $id 		= $request->id;
+            $data1      = $request->data1;
+            $data2      = $request->data2;
+            $data3      = $request->data3;
+            if($id!==null){
+                $insert = DB::table('t_models')
+                            ->where('id',$id)
+							->update([
+                                        'img'   	=>$data1['img'],
+                                        'title'	  	=>$data1['title'],
+                                        'desc'   	=>$data1['desc'],
+                                        'desc_eng'	=>$data1['desc_eng'],
+										'location'	=>$data1['location'],
+										'suitable'	=>$data1['suitable'],
+                                        'created_at'=>$adddate
+                                ]);
+                $get_id = $id;
+                //delete detail
+                $delete2 =DB::table('t_models_gallery')->where('id_models', $id)->delete();
+
+            }else{
+                
+                $insert = DB::table('t_models')
+							->insert([
+                                        'img'   	=>$data1['img'],
+                                        'title'	  	=>$data1['title'],
+                                        'desc'   	=>$data1['desc'],
+                                        'desc_eng'	=>$data1['desc_eng'],
+										'location'	=>$data1['location'],
+										'suitable'	=>$data1['suitable'],
+                                        'created_at'=>$adddate
+								]);
+                $get_id 	=DB::table('t_models')->where('created_at',$adddate)->pluck('id')->first();
+                
+
+            }
+            
+            if(!empty($data3)){
+                foreach($data3 as $row){
+                  
+                        DB::table('t_models_gallery')
+							->insert([
+                                    'id_models'   	=>$get_id ,
+                                    'img'	  	    =>$row['img'],
+                                    'title'   	    =>$row['title'],
+                                    'location'	    =>$row['location'],
+								]);
+
+                    
+                }
+            }
+			
+		
+
+			if ($insert){
+	            $t_array['msg_type'] 	='success';
+	            $t_array['msg'] 		="Simpan data berhasil..";
+	            $t_array['refresh'] 	=route('models_backend');
+	        }
+	        return $t_array;
+        }
+        catch(\Exception $e) {
+            $t_array['msg_type']='error';
+           $t_array['msg']=$e->getMessage();
+           return $t_array;
+       }
+
+	}
   
 }

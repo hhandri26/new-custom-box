@@ -217,14 +217,27 @@ var ProductDetail = new Vue({
 
         },
         add_qty:function(){
-            ProductDetail.data.qty += 1;
-            ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
+            if(ProductDetail.data.qty == 0){
+                ProductDetail.data.qty = 25;
+                ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
+
+            }else{
+                ProductDetail.data.qty += 1;
+                ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
+            }
+            
             
 
         },
         min_qty:function(){
-            ProductDetail.data.qty -= 1;
+            if(ProductDetail.data.qty == 25){
+            ProductDetail.data.qty = 25;
             ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
+            }else{
+                ProductDetail.data.qty -= 1;
+            ProductDetail.data.sub_total = ProductDetail.data.harga * ProductDetail.data.qty;
+
+            }
 
         },
         addToCart:function(){

@@ -8,6 +8,7 @@ Route::get('/project_front','HomeController@project')->name('project_front');
 Route::get('/gallery_front','HomeController@gallery')->name('gallery_front');
 Route::get('/contact_info_front','HomeController@contact_info')->name('contact_info_front');
 Route::get('/detail_product_front','HomeController@detail_product')->name('detail_product_front');
+Route::get('/detail_models_front','HomeController@detail_models_front')->name('detail_models_front');
 Route::get('/get_size_product_front','HomeController@get_size_product')->name('get_size_product_front');
 Route::get('/get_price_product_front','HomeController@get_price_product')->name('get_price_product_front');
 Route::get('/get_provinsi','HomeController@provinsi')->name('get_provinsi');
@@ -107,6 +108,11 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::post('/product_add', 'HomePageController@product_add')->name('product_add');
 	Route::get('/product_edit', 'HomePageController@product_edit')->name('product_edit');	
 	Route::get('/product_form', 'HomePageController@product_form')->name('product_form');
+	// models
+	Route::get('/models_backend', 'HomePageController@models_backend')->name('models_backend');	
+	Route::post('/models_backend_add', 'HomePageController@models_backend_add')->name('models_backend_add');
+	Route::get('/models_backend_edit', 'HomePageController@models_backend_edit')->name('models_backend_edit');	
+	Route::get('/models_backend_form', 'HomePageController@models_backend_form')->name('models_backend_form');
 	// why us 
 	Route::get('/why_us', 'HomePageController@why_us')->name('why_us');	
 	Route::get('/form_why_us', 'HomePageController@form_why_us')->name('form_why_us');	

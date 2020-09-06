@@ -25,9 +25,13 @@ class MemberController extends Controller{
                         'id_size'	  	=>$data1['id_size'],
                         'province'   	=>$data1['province'],
                         'city'	=>$data1['city'],
-                        'id_member'	=>$data1['id_member'],
                         'address'=>$data1['address'],
                         'note'=>$data1['note'],
+                        'first_name'=>$data1['first_name'],
+                        'last_name'=>$data1['last_name'],
+                        'district'=>$data1['district'],
+                        'zip_code'=>$data1['zip_code'],
+                        'phone_number'=>$data1['phone_number'],
                 ]);
 
             if ($insert){

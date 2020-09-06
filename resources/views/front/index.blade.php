@@ -29,7 +29,7 @@
 			<div class="container">
 				<div class="header-intro">
 					<h3>
-						<u>Post Project.</u>
+						<u>Models.</u>
 					</h3>
 				</div>
 			</div>
@@ -38,21 +38,21 @@
 				<div class="main-content">
 				
 					<div class="owl-carousel owl-theme">
-						@foreach($product as $row)
+						@foreach($models as $row)
 							<div class="item" >
 								<!-- Block1 -->
 								<div class="blo1">
 									<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
-										<a href="{{route('models')}}?id={{$row->id}}"><img src="{{asset('/public/images/product/'.$row->img)}}"></a>
+										<a href="{{route('models_detail')}}?id={{$row->id}}"><img src="{{asset('/public/images/models/'.$row->img)}}"></a>
 									</div>
 
 									<div class="wrap-text-blo1 p-t-35">
-										<a href="{{route('models')}}?id={{$row->id}}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
+										<a href="{{route('models_detail')}}?id={{$row->id}}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
 											{{$row->title}}
 										</h4></a>
 
 										<p class="m-b-20">
-											<span v-if="localStorage.lang == 'Eng'">
+											<!-- <span v-if="localStorage.lang == 'Eng'">
 												
 												{{$row->desc_eng}}
 												
@@ -61,10 +61,18 @@
 												
 												{{$row->desc}}
 												
-											</span>
+											</span> -->
+											<span v-if="localStorage.lang == 'Eng'">
+													{{substr($row->desc_eng, 0, 60) . '...'}}
+												</span>
+												<span v-else>
+
+													
+													{{substr($row->desc, 0, 60) . '...'}}
+												</span>
 										</p>
 										<center>
-										<a href="{{route('models')}}?id={{$row->id}}" class="txt4">
+										<a href="{{route('models_detail')}}?id={{$row->id}}" class="txt4">
 											<u>More Detail</u>
 											<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
 										</a>
@@ -166,7 +174,7 @@
 				<div class="container">
 					<div class="header-intro">
 						<h3>
-							<u>PAST PROJETCS.</u>
+							<u>Past Project.</u>
 						</h3>
 					</div>
 				</div>
@@ -189,9 +197,8 @@
 													{{$row->desc_eng}}
 												</span>
 												<span v-else>
+												{{$row->desc}}
 
-													{{$row->desc}}
-													
 												</span>
 											</p>
 											

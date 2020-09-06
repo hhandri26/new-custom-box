@@ -38,6 +38,7 @@ class TransactionController extends Controller{
                 'courier' => $this->request->courier,
             ]);
             // save detail transaksi
+            $detail = array();
             foreach($this->request->detail as $row){
               $dat = array(
                         'id_transaction'=> $donation->id,
@@ -47,8 +48,19 @@ class TransactionController extends Controller{
                         'harga'=>$row['harga'],
                         'sub_total' =>$row['sub_total']
               );
+              $send['id']=$row['product_id'];
+              $send['price']=$row['harga'];
+              $send['quantity']=$row['qty'];
+              $send['name']=$row['title'];
+
+              array_push($detail,$send);
               TransactionModels::add_details($dat);
             }
+            $shipping['id']=$donation->id;
+            $shipping['price']= floatval($this->request->amount_shipping);
+            $shipping['quantity']=1;
+            $shipping['name']= $this->request->courier;
+            array_push($detail,$shipping);
  
             // Buat transaksi ke midtrans kemudian save snap tokennya.
             $payload = [
@@ -62,14 +74,7 @@ class TransactionController extends Controller{
                     'phone'         => $donation->phone,
                     'address'       =>  $donation->address,
                 ],
-                'item_details' => [
-                    [
-                        'id'       => $donation->note,
-                        'price'    => $donation->amount,
-                        'quantity' => $donation->qty,
-                        'name'     => ucwords(str_replace('_', ' ', $donation->note))
-                    ]
-                ]
+                'item_details' => $detail
             ];
             $snapToken = Veritrans_Snap::getSnapToken($payload);
             $donation->snap_token = $snapToken;

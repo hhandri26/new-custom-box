@@ -12,7 +12,7 @@ class Import_piso implements ToModel, WithHeadingRow
     {
         return new PisoModels([
             'name'          => $row['name'],
-            'catagory'      => $row['catagory'],
+            'catagory'      => $row['category'],
             'p'             => $row['p'],
             'l'             => $row['l'],
             't'             => $row['t'],

@@ -139,7 +139,7 @@ function upload(obj_id,prefik,url_upload){
 function CrudAxios(url_save, data){
     axios.post(url_save, data).then(function(resp){
         if(resp.status==200){
-            if(resp.data.status==200){
+            if(resp.data.msg_type=='success'){
                 Alert(resp.data.msg_type,resp.data.msg);
                 window.location.href=resp.data.refresh;
             }

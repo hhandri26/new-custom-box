@@ -330,6 +330,62 @@ class HomeController extends Controller
 
     }
 
+    public function detail_models_front(Request $request){
+        
+        try {
+            $id = $request->id;
+            
+          
+    
+            $header = DB::table('t_models')
+                    ->select('*')
+                    ->where('id',$id)
+                    ->get();
+            
+            $detail = DB::table('t_models_gallery')
+                    ->select('*')
+                    ->where('id_models',$id)
+                    ->get();
+            $base_url = asset('public/images/gallery_models/');
+            $base_url2 = asset('public/images/models/');
+            $img = array();
+            foreach($header as $row){
+              
+                $head['id']  = $row->id;
+                $head['img'] = $base_url2.'/'.$row->img;
+                $head['title'] = $row->title;
+                $head['desc'] = $row->desc;
+                $head['desc_eng'] = $row->desc_eng;
+                $head['suitable'] = $row->suitable;
+            }
+            foreach($detail as $row){
+                $dat['id']  = $row->id;
+                $dat['img'] = $base_url.'/'.$row->img;
+                $dat['title'] = $row->title;
+                array_push($img,$dat);
+
+            }
+            
+
+            if ($header){
+                $t_array['msg_type'] 	='success';
+                $t_array['header'] 		= $head;
+                $t_array['detail'] 		= $img;
+            }
+            return $t_array;
+        
+    
+        }
+        catch(\Exception $e) {
+            $t_array['msg_type'] 	='error';
+            $t_array['msg'] 		=$e->getMessage();
+            return $t_array;
+       }
+
+        
+
+    }
+
     public function get_size_product(Request $request){
         try {
             $id = $request->id;
