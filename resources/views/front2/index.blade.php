@@ -35,12 +35,12 @@
                                                 <span class="model-title">{{$row->title}}</span>
                                                 <p class="model-desc">
                                                 <span v-if="localStorage.lang == 'Eng'">
-													{{substr($row->desc_eng, 0, 60) . '...'}}
+                                                    Suitable For {{substr($row->suitable, 0, 60) . '...'}}
 												</span>
 												<span v-else>
 
 													
-													{{substr($row->desc, 0, 60) . '...'}}
+                                                   Suitable For {{substr($row->suitable, 0, 60) . '...'}}
 												</span> 
                                                 </p>
                                             </div>

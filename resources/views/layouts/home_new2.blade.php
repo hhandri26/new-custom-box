@@ -21,7 +21,7 @@
                     <div class="uk-navbar-left uk-margin-large-left">
                         <ul class="uk-navbar-nav">
                             <li class="uk-active">
-                                <a class="uk-navbar-item uk-logo" href="#">
+                                <a class="uk-navbar-item uk-logo" href="{{ route('/')}}">
                                     <img class="logo" src="{{asset('public/front/')}}/images/icons/logo.png" alt="logo-icon">
                                 </a>
                             </li>
@@ -86,7 +86,7 @@
                     style="background-color:#fff;">
 
                     <div class="nav-overlay uk-navbar-left uk-margin-left">
-                        <a class="uk-navbar-item uk-logo" href="#">
+                        <a class="uk-navbar-item uk-logo" href="{{ route('/')}}">
                             <img class="logo" src="{{asset('public/front/')}}/images/icons/logo.png" alt="logo-icon">
                         </a>
                     </div>
