@@ -18,19 +18,16 @@
 
                 <div class="uk-position-relative">
                     <!-- slideshow -->
-                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
-                        uk-slideshow="ratio: false; autoplay:true;">
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay:true;">
 
                         <ul class=" uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 0">
-                            <li v-for="(row,index) in slideshow" >
+                            <li v-for="(row,index) in slideshow">
                                 <img v-bind:src="row.img" alt="" uk-cover>
                             </li>
                         </ul>
 
-                        <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon-button arrow-slideshow"
-                            href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-                        <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon-button arrow-slideshow"
-                            href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon-button arrow-slideshow" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon-button arrow-slideshow" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 
                         <div class="uk-position-bottom-center uk-position-small">
                             <ul class="uk-dotnav">
@@ -62,14 +59,12 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize uk-padding-remove-left uk-padding-remove-right"
-                                                href="#">
+                                            <a class="uk-text-capitalize uk-padding-remove-left uk-padding-remove-right" href="#">
                                                 <span uk-icon=" icon: user;"></span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize uk-padding-remove-right uk-padding-remove-left"
-                                                href="#">
+                                            <a class="uk-text-capitalize uk-padding-remove-right uk-padding-remove-left" href="#">
                                                 <span uk-icon=" icon: cart;"></span>(0)
                                             </a>
                                         </li>
@@ -80,7 +75,7 @@
                                             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize uk-padding-remove-left"  onclick="set_lang('Idn')">IDN</a>
+                                            <a class="uk-text-capitalize uk-padding-remove-left" onclick="set_lang('Idn')">IDN</a>
                                         </li>
                                     </ul>
                                     <ul class="uk-navbar-nav menu">
@@ -108,11 +103,10 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="uk-section uk-hidden@m uk-padding-remove" style="z-index: 2;">
             <div class="uk-container uk-padding-remove ">
-                <nav class="uk-navbar uk-navbar-container uk-margin uk-margin-remove-bottom" uk-sticky="bottom: #offset"
-                    style="background-color:#fff;">
+                <nav class="uk-navbar uk-navbar-container uk-margin uk-margin-remove-bottom" uk-sticky="bottom: #offset" style="background-color:#fff;">
 
                     <div class="nav-overlay uk-navbar-left uk-margin-left">
                         <a class="uk-navbar-item uk-logo" href="{{ route('/')}}">
@@ -121,10 +115,8 @@
                     </div>
 
                     <div class="nav-overlay uk-navbar-right uk-margin-right">
-                        <a class="uk-navbar-toggle uk-margin-remove-right uk-padding-remove" uk-search-icon
-                            uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-                        <a class="uk-navbar-toggle uk-link-reset" uk-navbar-toggle-icon href="#"
-                            uk-toggle="target: #offcanvas-flip"></a>
+                        <a class="uk-navbar-toggle uk-margin-remove-right uk-padding-remove" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+                        <a class="uk-navbar-toggle uk-link-reset" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-flip"></a>
                     </div>
 
                     <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
@@ -135,8 +127,7 @@
                             </form>
                         </div>
 
-                        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
-                            href="#"></a>
+                        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
 
                     </div>
                 </nav>
@@ -156,14 +147,13 @@
                     </div>
                 </div>
                 <!-- slideshow -->
-                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
-                    uk-slideshow="ratio: 7:3; animation: push">
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: 7:3; animation: push">
 
                     <ul class="uk-slideshow-items">
-                        <li v-for="(row, index) in slideshow" >
+                        <li v-for="(row, index) in slideshow">
                             <img v-bind:src="row.img" alt="" uk-cover>
                         </li>
-                    
+
                     </ul>
 
                 </div>
@@ -204,7 +194,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="uk-text-capitalize uk-padding-remove-right"  onclick="set_lang('Eng')">ENG</a>
+                                    <a class="uk-text-capitalize uk-padding-remove-right" onclick="set_lang('Eng')">ENG</a>
                                 </li>
                                 <li class="divider-sticky">
                                     <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
@@ -263,24 +253,18 @@
                 <div class="uk-width-1-2 uk-width-1-5@m">
                     <span class="titlefooter">ABOUT US.</span>
                     <ul class="uk-list uk-margin">
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Our Story</a></li>
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Career</a></li>
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Partnerships</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Our Story</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Career</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Partnerships</a></li>
                     </ul>
                 </div>
 
                 <div class="uk-width-1-2 uk-width-1-5@m">
                     <span class="titlefooter">HELP.</span>
                     <ul class="uk-list uk-margin">
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">How to Shop</a></li>
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">FAQ</a></li>
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Shipping Policy</a>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">How to Shop</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">FAQ</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Shipping Policy</a>
                         </li>
                     </ul>
                 </div>
@@ -288,12 +272,9 @@
                 <div class="uk-width-1-2 uk-width-1-5@m">
                     <span class="titlefooter">GET IN TOUCH.</span>
                     <ul class="uk-list uk-margin">
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Instagram</a></li>
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Facebook</a></li>
-                        <li class="uk-margin-remove"><a href="" id="footer-link"
-                                class="uk-text-small uk-text-capitalize">Email</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Instagram</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Facebook</a></li>
+                        <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Email</a></li>
                     </ul>
                 </div>
 
@@ -307,8 +288,7 @@
                     <form action="">
                         <div class="uk-grid" uk-grid>
                             <div class="uk-width-1-1 uk-margin-small-bottom">
-                                <input class="uk-input uk-form-width-1-1 uk-form-small" type="text"
-                                    placeholder="Your E-mail Address">
+                                <input class="uk-input uk-form-width-1-1 uk-form-small" type="text" placeholder="Your E-mail Address">
                             </div>
                             <div class="uk-width-1-1 uk-margin-remove">
                                 <button class="uk-button uk-button-secondary uk-button-small uk-width-1-1 signup">SIGN
@@ -362,38 +342,33 @@
     };
 </script>
 @yield('more_js')
-<script >
-var Index = new Vue({
-    el: '#Index',
-    data: {
-        slideshow:[],
-        product:[],
-        why_us:[],
-        binefit:[],
-        project:[]
+<script>
+    var Index = new Vue({
+        el: '#Index',
+        data: {
+            slideshow: [],
+            product: [],
+            why_us: [],
+            binefit: [],
+            project: []
 
-    },
-    methods: {
-    },
-    created: function () {
-        // get slideshow
-        axios.get("{{ route('slideshow_front')}}")
-        .then(function (data) {
-            Index.slideshow = data.data.data;
-        });
-
-      
-    },
-    mounted: function () {  
-    },
-    updated: function () {
-    },
-    watch: {
-
-    }
-});
+        },
+        methods: {},
+        created: function() {
+            // get slideshow
+            axios.get("{{ route('slideshow_front')}}")
+                .then(function(data) {
+                    Index.slideshow = data.data.data;
+                });
 
 
+        },
+        mounted: function() {},
+        updated: function() {},
+        watch: {
+
+        }
+    });
 </script>
 
 
