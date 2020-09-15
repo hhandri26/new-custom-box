@@ -350,6 +350,14 @@ body {
   margin-bottom: 25px;
 }
 
+#btn-link {
+  color: #cc9797;
+}
+#btn-link:hover {
+  color: #ffffff;
+  background-color: #cc9797;
+}
+
 .heading {
   color: #e9a6a5;
   font-size: small;
