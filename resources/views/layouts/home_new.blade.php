@@ -20,7 +20,7 @@
                     <!-- slideshow -->
                     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay:true;">
 
-                        <ul class=" uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 0">
+                        <ul class=" uk-slideshow-items">
                             <li v-for="(row,index) in slideshow">
                                 <img v-bind:src="row.img" alt="" uk-cover>
                             </li>
