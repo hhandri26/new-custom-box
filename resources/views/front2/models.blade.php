@@ -21,7 +21,15 @@
                             </div>
                             <div class="uk-card-body uk-text-center uk-padding-small uk-margin-top">
                                 <span class="model-title">{{$row->title}}</span>
-                                <p class="model-desc">{{$row->suitable}}</p>
+                                <br>
+                                <span v-if="localStorage.lang == 'Eng'">
+                                    {{substr($row->desc_eng, 0, 20) . '...'}}
+                                </span>
+                                <span v-else>
+
+                                    
+                                   {{substr($row->desc, 0, 20) . '...'}}
+                                </span> 
                             </div>
                             <div class="uk-card-footer uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right"
                                 style="border-top: 0px;">
