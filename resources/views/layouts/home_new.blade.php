@@ -18,11 +18,11 @@
 
                 <div class="uk-position-relative">
                     <!-- slideshow -->
-                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay:true;">
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay:true; ratio:7:3; autoplay:true;">
 
                         <ul class=" uk-slideshow-items">
                             <li v-for="(row,index) in slideshow">
-                                <img v-bind:src="row.img" alt="" uk-cover>
+                                <img v-bind:src="row.img" alt="" uk-cover style="max-height: 100%; max-width: 100%;">
                             </li>
                         </ul>
 
