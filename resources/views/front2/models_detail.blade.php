@@ -42,9 +42,9 @@
 
                 <div class="uk-width-1-2@m uk-width-1-1 uk-padding">
                     <div class="uk-width-1-1 uk-text-center uk-visible@m">
-                        <a href="shop1.html" id="btn-link" class="uk-icon-button uk-margin-right" uk-icon="icon: chevron-left"></a>
+                        <a href="#" id="btn-link" @click="prev_model()" class="uk-icon-button uk-margin-right" uk-icon="icon: chevron-left"></a>
                         <span class="title-details uk-text-center">@{{header.title}}</span>
-                        <a href="shop2.html" id="btn-link" class="uk-icon-button uk-margin-left" uk-icon="icon: chevron-right"></a </div> <div class="uk-flex uk-flex-column">
+                        <a href="#" @click="next_model()" id="btn-link" class="uk-icon-button uk-margin-left" uk-icon="icon: chevron-right"></a </div> <div class="uk-flex uk-flex-column">
 
                         <span class="uk-margin-bottom heading">Model.</span>
                         <span>@{{header.title}}</span>
@@ -93,6 +93,23 @@
         },
         computed: {},
         methods: {
+            next_model:function(){
+                var id = getParameterByName('id');
+                axios.get("{{route('next_model')}}?id=" + id)
+                .then(function(data) {
+                   window.location.href = "{{route('models_detail')}}?id=" + data.data;
+                });
+
+
+            },
+            prev_model:function(){
+                var id = getParameterByName('id');
+                axios.get("{{route('prev_model')}}?id=" + id)
+                .then(function(data) {
+                   window.location.href = "{{route('models_detail')}}?id=" + data.data;
+                });
+
+            }
 
 
 

@@ -138,6 +138,9 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/profile_member', 'HomePageController@profile_member')->name('profile_member');
 	Route::post('/update_profile_member', 'HomePageController@update_profile_member')->name('update_profile_member');
 	Route::get('/history_pesanan', 'HomePageController@history_pesanan')->name('history_pesanan');
+	// next and prev models
+	Route::get('/next_model','HomeController@next_model')->name('next_model');
+	Route::get('/prev_model','HomeController@prev_model')->name('prev_model');
 
 
 });
@@ -167,5 +170,7 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/add_project', 'ScheduleController@add_project')->name('add_project');
 
 });
+
+
 
 

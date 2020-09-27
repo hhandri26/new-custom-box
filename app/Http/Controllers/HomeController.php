@@ -550,6 +550,28 @@ class HomeController extends Controller
                 return $response;
                 }
         }
+        
+        public function next_model(Request $request){
+            $id     = $request->id;
+            $return =  DB::table('t_models')->whereRaw('id = (select min(id) from t_models where id > '.$id.')')->pluck('id')->first();
+            if($return ==''){
+                return 2;
+            }else{
+                return $return;
+            }
+
+        }
+
+        public function prev_model(Request $request){
+            $id     = $request->id;
+            $return =  DB::table('t_models')->whereRaw('id = (select max(id) from t_models where id < '.$id.')')->pluck('id')->first();
+            if($return ==''){
+                return 2;
+            }else{
+                return $return;
+            }
+
+        }
 
   
 
