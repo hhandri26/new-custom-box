@@ -11,27 +11,21 @@
                     <a href="shop2.html" id="btn-link" class="uk-hidden@m uk-icon-button uk-margin-left" uk-icon="icon: chevron-right"></a>
                     <div class="uk-visible-toggle uk-light uk-padding-large" tabindex="-1" uk-slideshow="ratio: 3:3; autoplay:true;">
                         <ul class="uk-slideshow-items">
-                            <li v-if="ada == true" v-for="(row,index) in detail">
+                            <li v-for="(row,index) in detail">
                                 <img v-bind:src="row.img" alt="" uk-cover>
                             </li>
-                            <li else>
-                                <img v-bind:src="header.img" alt="" uk-cover>
-                            </li>
+                           
 
 
                         </ul>
                         <div class="uk-width-1-1 uk-margin-top">
                             <ul class="uk-thumbnav uk-flex-center" uk-margin>
-                                <li v-if="ada == true" v-for="(row,index) in detail" v-bind:class="index==0 ? 'uk-active' : '' " :uk-slideshow-item="row.id">
+                                <li v-for="(row,index) in detail" v-bind:class="index==0 ? 'uk-active' : '' " :uk-slideshow-item="index">
                                     <a href="#">
                                         <img v-bind:src="row.img" width=" 50" alt="">
                                     </a>
                                 </li>
-                                <li else class="uk-active" uk-slideshow-item="1">
-                                    <a href="#">
-                                        <img v-bind:src="header.img" width=" 50" alt="">
-                                    </a>
-                                </li>
+                                
 
 
                             </ul>
