@@ -6,9 +6,9 @@
         <div class="uk-container">
             <div class="uk-grid" uk-grid>
                 <div class="uk-width-1-2@m uk-width-1-1 uk-text-center">
-                    <a href="shop1.html" id="btn-link" class="uk-hidden@m uk-icon-button uk-margin-right" uk-icon="icon: chevron-left"></a>
+                    <a href="#" @click="prev_model()" id="btn-link" class="uk-hidden@m uk-icon-button uk-margin-right" uk-icon="icon: chevron-left"></a>
                     <span class="title-details uk-text-center uk-hidden@m">@{{header.title}}</span>
-                    <a href="shop2.html" id="btn-link" class="uk-hidden@m uk-icon-button uk-margin-left" uk-icon="icon: chevron-right"></a>
+                    <a href="#" @click="next_model()" id="btn-link" class="uk-hidden@m uk-icon-button uk-margin-left" uk-icon="icon: chevron-right"></a>
                     <div class="uk-visible-toggle uk-light uk-padding-large" tabindex="-1" uk-slideshow="ratio: 3:3; autoplay:true;">
                         <ul class="uk-slideshow-items">
                             <li v-for="(row,index) in detail">
