@@ -35,29 +35,15 @@
                         <div class="uk-width-1-1 uk-margin-small-top">
                             <label class="uk-form-label" for="form-stacked-text">Province<sup>*</sup></label>
                             <div class="uk-form-controls">
-                                <select  v-model="province_id" @change="get_city()" class="uk-select" >
-                                    <option v-for="row in provinsi" :value="row.province_id" > @{{ row.province }} </option>
-                                </select>
+                              
+                                <input class="uk-input uk-form-small address" v-model="data.province_id" id="form-stacked-text" type="text"
+                                    placeholder="Aceh, Jawa Barat, Banten">
                             </div>
                         </div>
-                        <div class="uk-width-1-1 uk-margin-small-top">
-                            <label class="uk-form-label" for="form-stacked-text">City<sup>*</sup></label>
-                            <div class="uk-form-controls">
-                                <select  v-model="city_id" class="uk-select" >
-                                    <option v-for="row in city" :value="row.city_id" > @{{ row.city_name }} </option>
-                                </select>
-                               
-                            </div>
-                        </div>
+     
+                       
                         <div class="uk-width-1-2 uk-margin-small-top">
-                            <label class="uk-form-label" for="form-stacked-text">District<sup>*</sup></label>
-                            <div class="uk-form-controls">
-                                <input class="uk-input uk-form-small" v-model="data.district" id="form-stacked-text" type="text"
-                                    placeholder="">
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2 uk-margin-small-top">
-                            <label class="uk-form-label" for="form-stacked-text">Zip Code</label>
+                            <label class="uk-form-label" for="form-stacked-text">Zip Code (Optional)</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input uk-form-small" v-model="data.zip_code" id="form-stacked-text" type="text"
                                     placeholder="">
@@ -89,9 +75,8 @@
                         <div class="uk-width-1-1 uk-margin-small-top">
                             <label class="uk-form-label" for="form-stacked-text">Reference Size<sup>*</sup></label>
                             <div class="uk-form-controls">
-                                <select  v-model="size_id" class="uk-select">
-                                    <option v-for="row in size" :value="row.id" > @{{ row.panjang }} cm X @{{row.lebar}} cm X @{{row.tinggi}} </option>
-                                </select>
+                                <input class="uk-input uk-form-small" v-model="size_id" id="form-stacked-text" type="text"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="uk-width-1-1 uk-margin-small-top">
@@ -120,20 +105,11 @@
                                 <li class="uk-margin-remove-top">
                                     <p class="uk-margin-remove">Pengiriman keluar kota akan menggunakan J&T.</p>
                                 </li>
-                                <li class="uk-margin-remove-top">
-                                    <p class="uk-margin-remove">Untuk pengiriman gojek sameday/ kurir sendiri bisa
-                                        dipanggilkan
-                                        langsung setelah pengisian form ke alamat:</p>
-                                </li>
+                               
                             </ul>
-                            <p class="tnc uk-margin-remove-bottom text-bold">PT TINACOKRO BOX</p>
-                            <p class="tnc uk-margin-remove-top text-bold">Blok Semanan II No.39, Jl.
-                                Semanan II,
-                                RT.4/RW.10, Semanan,
-                                Kalideres,
-                                Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11850</p>
-                            <p class="tnc">Untuk sample kita ada 2 pilihan:</p>
-                            <p class="tnc uk-margin-remove-bottom text-bold">SAMPLE BAHAN</p>
+                           
+                            <p class="tnc">2 pilihan sample:</p>
+                            <p class="tnc uk-margin-remove-bottom text-bold">SAMPLE BAHAN FREE</p>
                             <ul class="uk-list-disc uk-margin-remove-top">
                                 <li>
                                     <p class="uk-margin-remove">Sample model e-Mailer dengan ukuran terdekat</p>
@@ -164,7 +140,9 @@
                                         (biaya akan
                                         dijadikan DP pembuatan box setelah proses pembuatan dilanjutkan)</p>
                                 </li>
+                               
                             </ul>
+                            <p class="tnc uk-margin-remove-bottom text-bold">Untuk info lebih lanjut bisa langsung menghubungi kami</p>
                         </div>
                         <div class="uk-width-1-1">
                             <a class="uk-button uk-width-1-1"
@@ -231,17 +209,12 @@ var sample = new Vue({
 
         },
         request:function(){
-            if( sample.data.first_name!=='' && sample.data.address!=='' && sample.province_id!=='' && sample.city_id!=='' && sample.product_id!=='' && sample.size_id!==''){
+            if( sample.data.first_name!=='' && sample.data.address!=='' && sample.data.province_id!==''  && sample.product_id!=='' && sample.size_id!==''){
                 var dat = {
 					_token: $('meta[name="csrf-token"]').attr('content'),
-                    id_product : sample.province_id,
+                    id_product : sample.product_id,
                     id_size    : sample.size_id,
-                    province     :_.filter(sample.provinsi, function (o) {
-                        return o.province_id == sample.province_id;
-                    })[0].province, 
-                    city       :_.filter(sample.city, function (o) {
-                        return o.city_id == sample.city_id;
-                    })[0].city_name, 
+                    province : sample.data.province_id,
                     first_name:sample.data.first_name,
                     last_name:sample.data.last_name,
                     district:sample.data.district,
@@ -249,6 +222,7 @@ var sample = new Vue({
                     email:sample.data.email,
                     phone_number:sample.data.phone_number,
                     address:sample.data.address,
+                    note:sample.data.note
 
                 };
                 axios.post("{{route('request_sample_front')}}", dat).then(function (response) {                      

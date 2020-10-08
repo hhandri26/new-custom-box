@@ -203,7 +203,7 @@
                     <span class="section-shop">CREATE YOUR<br>CUSTOM PACKAGING TODAY</span>
                 </div>
                 <div class="uk-width-1-1 uk-margin-top">
-                    <a href="#" id="shop-now">SHOP NOW</a>
+                    <a href="{{route('contact')}}" id="shop-now">SHOP NOW</a>
                 </div>
             </div>
         </div>
