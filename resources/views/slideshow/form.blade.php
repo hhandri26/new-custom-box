@@ -42,6 +42,12 @@
                                     <input type="text" id="title" class="form-control" name="title" value="@if($id>0){{ $get['title'] }} @endif">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="desc" class="col-sm-6 control-label1">Link</label>
+                                <div class="col-sm-6">
+                                    <input type="text" id="link" class="form-control" name="link" value="@if($id>0){{ $get['link'] }} @endif">
+                                </div>
+                            </div>
                             
                         </div>
                 </div>
@@ -56,6 +62,7 @@ function SaveWarning(){
     var id          =$('#id').val();
     var a           = {};
     a.title         = $('#title').val();
+    a.link         = $('#link').val();
    
 
     var url_save    = $('#url_save').val();

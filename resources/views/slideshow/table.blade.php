@@ -23,6 +23,7 @@
                     <th style="width: 50px;">No</th>
                     <th>Image</th>
                     <th>Title</th>
+                    <th>Link</th>
                     
                     <th style="width: 50px;">Option</th>
                 </tr>
@@ -35,6 +36,7 @@
                        <td>{{$no}}</td>
                        <td><img src="{{asset('/public/images/banner/'.$row->img)}}" class="img-responsive" alt="" style="width: 200px" ></td>
                        <td>{{$row->title}}</td>  
+                       <td>{{$row->link}}</td>  
                                     
                        <td style="text-align:right;">
                             <a href="javascript:edit({{$row->id}})" class="btn btn-info btn-sm" style="float: left;">

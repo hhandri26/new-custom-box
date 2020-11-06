@@ -16,7 +16,8 @@ class HomeModels extends Model
 				->get();
 		foreach ($data1 as $row) {
 			$json_array['id']       = $row->id;
-            $json_array['title']    = $row->title;
+			$json_array['title']    = $row->title;
+			$json_array['link']    = $row->link;
             $json_array['img']      = $row->img;
 			
 		}
@@ -38,7 +39,8 @@ class HomeModels extends Model
 					$update = DB::table('t_slideshow')
 					 		  ->where('id',$id)
 					 		  ->update([
-					 		  			'title'		=>$val['title'],
+										   'title'		=>$val['title'],
+										   'link'		=>$val['link'],
 					 		  			'adddate' 	=>$adddate
 					 		  		]);
 					$confirm1	=1;
@@ -49,7 +51,8 @@ class HomeModels extends Model
 				foreach ($json_array as $key => $val){					
 					$insert = DB::table('t_slideshow')
 					 		  ->insert([
-                                        'title'		=>$val['title'],
+										'title'		=>$val['title'],
+										'link'		=>$val['link'],
                                         'adddate' 	=>$adddate
 					 		  		]);
 					$confirm1	=1;

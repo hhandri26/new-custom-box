@@ -22,7 +22,8 @@
 
                         <ul class=" uk-slideshow-items">
                             <li v-for="(row,index) in slideshow">
-                                <img v-bind:src="row.img" alt="" uk-cover style="max-height: 100%; max-width: 100%;">
+                            <a v-bind:href="row.link">  <img v-bind:src="row.img" alt="" uk-cover style="max-height: 100%; max-width: 100%;"></a>
+                              
                             </li>
                         </ul>
 

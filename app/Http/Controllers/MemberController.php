@@ -9,6 +9,8 @@ use App\Imports\Import_piso;
 use Maatwebsite\Excel\Facades\Excel;
 use DB;
 use App\Models\Members;
+use App\Mail\Admin;
+use Illuminate\Support\Facades\Mail;
 class MemberController extends Controller{
     public function index(){
         $data['table']      = Members::all();
@@ -33,6 +35,7 @@ class MemberController extends Controller{
                         'zip_code'=>$data1['zip_code'],
                         'phone_number'=>$data1['phone_number'],
                 ]);
+               Mail::to("handrisaeputra@gmail.com")->send(new Admin());
 
             if ($insert){
                 $t_array['msg_type'] 	='success';

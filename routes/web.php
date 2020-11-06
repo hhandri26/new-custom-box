@@ -2,6 +2,7 @@
 Route::get('/', 'FrontController@index')->name('/');
 Route::get('/slideshow_front','HomeController@slideshow')->name('slideshow_front');
 Route::get('/product_front','HomeController@product')->name('product_front');
+Route::get('/models_front','HomeController@models')->name('models_front');
 Route::get('/why_us_front','HomeController@why_us')->name('why_us_front');
 Route::get('/binefit_front','HomeController@binefit')->name('binefit_front');
 Route::get('/project_front','HomeController@project')->name('project_front');

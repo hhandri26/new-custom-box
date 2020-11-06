@@ -67,7 +67,7 @@
                             <label class="uk-form-label" for="form-stacked-text">Model<sup>*</sup></label>
                             <div class="uk-form-controls">
                                 <select  v-model="product_id" class="uk-select"  @change="get_size()" >
-                                    <option v-for="row in product" :value="row.id" > @{{ row.title }} </option>
+                                    <option v-for="row in product" :value="row.title" > @{{ row.title }} </option>
                                 </select>
                                
                             </div>
@@ -76,7 +76,7 @@
                             <label class="uk-form-label" for="form-stacked-text">Reference Size<sup>*</sup></label>
                             <div class="uk-form-controls">
                                 <input class="uk-input uk-form-small" v-model="size_id" id="form-stacked-text" type="text"
-                                    placeholder="">
+                                    placeholder="Length x Width x Height">
                             </div>
                         </div>
                         <div class="uk-width-1-1 uk-margin-small-top">
@@ -233,7 +233,7 @@ var sample = new Vue({
                             'Request Sent',
                             'success'
                         ).then((value) => {
-                            window.location.href = "{{route('models')}}"
+                            //window.location.href = "{{route('models')}}"
                         });
                     
                 }).catch(function (error) {
@@ -258,9 +258,9 @@ var sample = new Vue({
            
         
         });
-        axios.get("{{route('product_front')}}")
+        axios.get("{{route('models_front')}}")
         .then(function (data) {
-            sample.product = data.data.data;
+            sample.product = data.data;
 
            
         

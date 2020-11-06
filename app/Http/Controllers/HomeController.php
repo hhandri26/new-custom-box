@@ -55,6 +55,7 @@ class HomeController extends Controller
             $img = array();
             foreach($data as $row){
                 $dat['id']  = $row->id;
+                $dat['link']  = $row->link;
                 $dat['img'] = $base_url.'/'.$row->img;
                 array_push($img,$dat);
 
@@ -327,6 +328,14 @@ class HomeController extends Controller
        }
 
         
+
+    }
+
+    public function models(){
+        $data = DB::table('t_models')
+        ->select('*')
+        ->get();
+        return $data;
 
     }
 
