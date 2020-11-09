@@ -55,6 +55,10 @@
 
                         </span>
                         <hr class="uk-margin-meddium-bottom">
+                        <div class="uk-card-footer uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right"
+                                style="border-top: 0px;">
+                                <a :href="header.link" target="_blank" id="model-link">BUY NOW</a>
+                            </div>
                     </div>
                 </div>
 

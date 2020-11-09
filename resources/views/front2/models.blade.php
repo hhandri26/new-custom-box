@@ -31,9 +31,14 @@
                                    {{substr($row->desc, 0, 20) . '...'}}
                                 </span> 
                             </div>
+                           
                             <div class="uk-card-footer uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right"
                                 style="border-top: 0px;">
                                 <a href="{{route('models_detail')}}?id={{$row->id}}" id="model-link">MORE DETAILS</a>
+                            </div>
+                            <div class="uk-card-footer uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right"
+                                style="border-top: 0px;">
+                                <a href="{{$row->link}}" target="_blank" id="model-link">BUY NOW</a>
                             </div>
                         </div>
                     </div>

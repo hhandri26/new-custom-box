@@ -366,6 +366,7 @@ class HomeController extends Controller
                 $head['desc'] = $row->desc;
                 $head['desc_eng'] = $row->desc_eng;
                 $head['suitable'] = $row->suitable;
+                $head['link'] = $row->link;
             }
             foreach($detail as $row){
                 $dat['id']  = $row->id;

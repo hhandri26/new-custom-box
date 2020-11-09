@@ -35,7 +35,7 @@ class MemberController extends Controller{
                         'zip_code'=>$data1['zip_code'],
                         'phone_number'=>$data1['phone_number'],
                 ]);
-               Mail::to("handrisaeputra@gmail.com")->send(new Admin());
+               Mail::to("customboxid@gmail.com")->send(new Admin());
 
             if ($insert){
                 $t_array['msg_type'] 	='success';

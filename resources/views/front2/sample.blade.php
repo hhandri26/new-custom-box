@@ -233,7 +233,7 @@ var sample = new Vue({
                             'Request Sent',
                             'success'
                         ).then((value) => {
-                            //window.location.href = "{{route('models')}}"
+                            window.location.href = "{{route('models')}}"
                         });
                     
                 }).catch(function (error) {

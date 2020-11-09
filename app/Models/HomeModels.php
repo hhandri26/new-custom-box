@@ -658,6 +658,7 @@ class HomeModels extends Model
                                         'desc_eng'	=>$data1['desc_eng'],
 										'location'	=>$data1['location'],
 										'suitable'	=>$data1['suitable'],
+										'link'   	=>$data1['link'],
                                         'created_at'=>$adddate
                                 ]);
                 $get_id = $id;
@@ -674,6 +675,7 @@ class HomeModels extends Model
                                         'desc_eng'	=>$data1['desc_eng'],
 										'location'	=>$data1['location'],
 										'suitable'	=>$data1['suitable'],
+										'link'   	=>$data1['link'],
                                         'created_at'=>$adddate
 								]);
                 $get_id 	=DB::table('t_models')->where('created_at',$adddate)->pluck('id')->first();

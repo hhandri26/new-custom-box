@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label for="desc" class="col-sm-3 control-label1 "> Link Produk</label>   
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="suitable" v-model="data.suitable">
+                                    <input type="text" class="form-control" id="link" v-model="data.link">
                                 </div>                            
                             </div>
                            
@@ -134,7 +134,8 @@ var form = new Vue({
             desc_eng:'',
             desc  :'',
             location:"{{asset('public/img/df.jpg')}}",
-            suitable:''
+            suitable:'',
+            link:''
         },
         data2:[],
         data3:[],
