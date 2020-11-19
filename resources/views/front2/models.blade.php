@@ -1,7 +1,7 @@
 @extends('layouts.home_new2')
 
 @section('content')
-<div class="uk-section uk-padding-remove-top">
+<div class="uk-section uk-padding-remove-top" id="Shop">
         <div class="uk-container">
             <div class="uk-grid uk-padding uk-margin-remove-top" uk-grid
                 uk-height-match="target: > div > div > .uk-card-body"
@@ -23,12 +23,12 @@
                                 <span class="model-title">{{$row->title}}</span>
                                 <br>
                                 <span v-if="localStorage.lang == 'Eng'">
-                                    {{substr($row->desc_eng, 0, 20) . '...'}}
+                                    {{substr($row->desc_eng, 0, 50) . '...'}}
                                 </span>
                                 <span v-else>
 
                                     
-                                   {{substr($row->desc, 0, 20) . '...'}}
+                                   {{substr($row->desc, 0, 50) . '...'}}
                                 </span> 
                             </div>
                            
