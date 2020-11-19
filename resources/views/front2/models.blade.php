@@ -23,12 +23,12 @@
                                 <span class="model-title">{{$row->title}}</span>
                                 <br>
                                 <span v-if="localStorage.lang == 'Eng'">
-                                    {{$row->desc_eng}}
+                                    {{substr($row->desc_eng, 0, 20) . '...'}}
                                 </span>
                                 <span v-else>
 
                                     
-                                   {{$row->desc}}
+                                   {{substr($row->desc, 0, 20) . '...'}}
                                 </span> 
                             </div>
                            
