@@ -327,6 +327,15 @@
 <script src="{{asset('public/front/')}}/js/core/axios.min.js?ver=01042020"></script>
 <script src="{{asset('public/front/')}}/js/core/header.js?ver=01042020"></script>
 <script src="{{asset('public/front/')}}/js/core/nav.js?ver=01042020"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD8544MK1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD8544MK1X');
+</script>
 <script>
     $(window).scroll(example);
 
