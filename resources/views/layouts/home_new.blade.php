@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{{asset('public/new/')}}/css/uikit.min.css">
     <link rel="stylesheet" href="{{asset('public/new/')}}/css/main.css">
     <link rel="icon" href="{{asset('public/front/')}}/images/icons/LOGO icon.png" type="image/gif" sizes="16x16">
-     <meta name="description" content="Indonesia premium corrugated packaging supplier Providing Solutions Out of The Box">
+    <meta name="description" content="Indonesia premium corrugated packaging supplier Providing Solutions Out of The Box">
+    <meta name="google-site-verification" content="8zitU_an1oFuK930Dkbiw3kOCXB2F1d4p2NKtFXggQs"/>
+    <meta name="robots" content="noindex,nofollow">
 </head>
 
 <body>
