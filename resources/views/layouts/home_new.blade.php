@@ -302,7 +302,7 @@
                     </form>
                 </div>
                 <div class="uk-width-1-2@m uk-width-1-1 uk-text-left@m uk-padding-remove-bottom uk-text-center">
-                    <footer class="uk-text-small">Copyright. 2020 Custombox Indonesia</footer>
+                    <footer class="uk-text-small">Copyright. 2020 Custombox Indonesia (PT. Tinacokro Box)</footer>
                 </div>
                 <div class="uk-width-1-2 uk-text-right uk-visible@m uk-padding-remove-bottom">
                     <a href="#" uk-totop uk-scroll class="uk-icon-button scroll-top"></a>
