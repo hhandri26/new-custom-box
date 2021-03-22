@@ -24,8 +24,6 @@
                 <div class="panel panel-info">
                     <div class="panel-heading1"></div>     
                         <div class="panel-body">
-                            
-                            
                             <div class="form-group">
                                 <label for="desc" class="col-sm-3 control-label1 require">* Title</label>
                                 <div class="col-sm-9">
@@ -63,13 +61,6 @@
                                     <input type="text" class="form-control"  id="link" name="link" value="@if($id>0){{ $get['link'] }} @endif">
                                 </div>
                             </div>
-                            
-                            
-                         
-                          
-                            
-                           
-                            
                         </div>
                 </div>
             </div>

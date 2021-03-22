@@ -25,7 +25,7 @@
 
                         <ul class=" uk-slideshow-items">
                             <li v-for="(row,index) in slideshow">
-                            <a v-bind:href="row.link">  <img v-bind:src="row.img" alt="" uk-cover style="max-height: 100%; max-width: 100%;"></a>
+                            <a href="{{route('contact')}}">  <img v-bind:src="row.img" alt="" uk-cover style="max-height: 100%; max-width: 100%;"></a>
                               
                             </li>
                         </ul>
@@ -62,41 +62,56 @@
                                                 <span uk-icon=" icon: search;"></span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li hidden>
                                             <a class="uk-text-capitalize uk-padding-remove-left uk-padding-remove-right" href="#">
                                                 <span uk-icon=" icon: user;"></span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li hidden>
                                             <a class="uk-text-capitalize uk-padding-remove-right uk-padding-remove-left" href="#">
                                                 <span uk-icon=" icon: cart;"></span>(0)
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize uk-padding-remove-right" onclick="set_lang('Eng')">ENG</a>
+                                            <a class="uk-text-capitalize uk-padding-remove-right aa" onclick="set_lang('Eng')">ENG</a>
                                         </li>
                                         <li class="divider">
                                             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize uk-padding-remove-left" onclick="set_lang('Idn')">IDN</a>
+                                            <a class="uk-text-capitalize uk-padding-remove-left aa" onclick="set_lang('Idn')">IDN</a>
                                         </li>
                                     </ul>
                                     <ul class="uk-navbar-nav menu">
                                         <li>
-                                            <a class="uk-text-capitalize uk-link-muted" href="{{route('/')}}">Home</a>
+                                            <a class="uk-text-capitalize uk-link-muted" href="{{route('/')}}">
+                                                <span v-if="localStorage.lang == 'Eng'">Home</span>
+                                                <span v-else>Rumah</span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize" href="{{route('models')}}">Model</a>
+                                            <a class="uk-text-capitalize" href="{{route('models')}}">
+                                                <span v-if="localStorage.lang == 'Eng'">Model</span>
+                                                <span v-else>Model</span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize" href="{{route('gallery_custombox')}}">Gallery</a>
+                                            <a class="uk-text-capitalize" href="{{route('gallery_custombox')}}">
+                                                <span v-if="localStorage.lang == 'Eng'">Gallery</span>
+                                                <span v-else>Galeri</span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize" href="{{route('sample_custombox')}}">Sample</a>
+                                            <a class="uk-text-capitalize" href="{{route('sample_custombox')}}">
+                                                <span v-if="localStorage.lang == 'Eng'">Sample</span>
+                                                <span v-else>Sampel</span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a class="uk-text-capitalize" href="{{route('contact')}}">Contact Us</a>
+                                            <a class="uk-text-capitalize" href="{{route('contact')}}">
+                                                <span v-if="localStorage.lang == 'Eng'">Contact Us</span>
+                                                <span v-else>Hubungi kami</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -140,11 +155,35 @@
                     <div class="uk-offcanvas-bar offcanvas">
 
                         <ul class="uk-nav offcanvas-nav uk-nav-left uk-list uk-list-divider uk-margin-auto-vertical">
-                            <li><a href="{{route('/')}}">Home</a></li>
-                            <li id="nav-divider"><a href="{{route('models')}}">Model</a></li>
-                            <li id="nav-divider"><a href="{{route('gallery_custombox')}}">Gallery</a></li>
-                            <li id="nav-divider"><a href="{{route('sample_custombox')}}">Sample</a></li>
-                            <li id="nav-divider"><a href="{{route('contact')}}">Contact Us</a></li>
+                            <li><a href="{{route('/')}}">
+                                <span v-if="localStorage.lang == 'Eng'">Home</span>
+                                <span v-else>Rumah</span>
+                                </a>
+                            </li>
+                            <li id="nav-divider">
+                                <a href="{{route('models')}}">
+                                    <span v-if="localStorage.lang == 'Eng'">Model</span>
+                                    <span v-else>Model</span>
+                                </a>
+                            </li>
+                            <li id="nav-divider">
+                                <a href="{{route('gallery_custombox')}}">
+                                    <span v-if="localStorage.lang == 'Eng'">Gallery</span>
+                                    <span v-else>Galeri</span>
+                                </a>
+                            </li>
+                            <li id="nav-divider">
+                                <a href="{{route('sample_custombox')}}">
+                                    <span v-if="localStorage.lang == 'Eng'">Sample</span>
+                                    <span v-else>Sampel</span>
+                                </a>
+                            </li>
+                            <li id="nav-divider">
+                                <a href="{{route('contact')}}">
+                                    <span v-if="localStorage.lang == 'Eng'">Contact Us</span>
+                                    <span v-else>Hubungi kami</span>
+                                </a>
+                            </li>
                         </ul>
                         <span class="uk-position-bottom offcanvas-footer uk-text-center">Copyright. 2020 Custombox
                             Indonesia</span>
@@ -187,12 +226,12 @@
                                         <span uk-icon=" icon: search;"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li hidden>
                                     <a class="uk-text-capitalize uk-padding-remove-left uk-padding-remove-right" href="#">
                                         <span uk-icon=" icon: user;"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li hidden>
                                     <a class="uk-text-capitalize uk-padding-remove-right uk-padding-remove-left" href="#">
                                         <span uk-icon=" icon: cart;"></span>(0)
                                     </a>
@@ -209,19 +248,34 @@
                             </ul>
                             <ul class="uk-navbar-nav menu-sticky">
                                 <li>
-                                    <a class="uk-text-capitalize uk-link-muted" href="{{route('/')}}">Home</a>
+                                    <a class="uk-text-capitalize uk-link-muted" href="{{route('/')}}">
+                                        <span v-if="localStorage.lang == 'Eng'">Home</span>
+                                        <span v-else>Rumah</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="uk-text-capitalize" href="{{route('models')}}">Model</a>
+                                    <a class="uk-text-capitalize" href="{{route('models')}}">
+                                        <span v-if="localStorage.lang == 'Eng'">Model</span>
+                                        <span v-else>Model</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="uk-text-capitalize" href="{{route('gallery_custombox')}}">Gallery</a>
+                                    <a class="uk-text-capitalize" href="{{route('gallery_custombox')}}">
+                                        <span v-if="localStorage.lang == 'Eng'">Gallery</span>
+                                        <span v-else>Galeri</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="uk-text-capitalize" href="{{route('sample_custombox')}}">Sample</a>
+                                    <a class="uk-text-capitalize" href="{{route('sample_custombox')}}">
+                                        <span v-if="localStorage.lang == 'Eng'">Sample</span>
+                                        <span v-else>Sampel</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a class="uk-text-capitalize" href="{{route('contact')}}">Contact Us</a>
+                                    <a class="uk-text-capitalize" href="{{route('contact')}}">
+                                        <span v-if="localStorage.lang == 'Eng'">Contact Us</span>
+                                        <span v-else>Hubungi kami</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -238,7 +292,7 @@
         <div class="uk-container">
             <div class="uk-grid uk-margin-small-top uk-text-left" uk-grid>
 
-                <div class="uk-width-1-2 uk-width-1-5@m">
+                <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                     <span class="titlefooter">MY ACCOUNT.</span>
                     <ul class="uk-list uk-margin">
                         <li class="uk-margin-remove">
@@ -254,7 +308,7 @@
                     </ul>
                 </div>
 
-                <div class="uk-width-1-2 uk-width-1-5@m">
+                <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                     <span class="titlefooter">ABOUT US.</span>
                     <ul class="uk-list uk-margin">
                         <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Our Story</a></li>
@@ -263,7 +317,7 @@
                     </ul>
                 </div>
 
-                <div class="uk-width-1-2 uk-width-1-5@m">
+                <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                     <span class="titlefooter">HELP.</span>
                     <ul class="uk-list uk-margin">
                         <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">How to Shop</a></li>
@@ -273,7 +327,7 @@
                     </ul>
                 </div>
 
-                <div class="uk-width-1-2 uk-width-1-5@m">
+                <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                     <span class="titlefooter">GET IN TOUCH.</span>
                     <ul class="uk-list uk-margin">
                         <li class="uk-margin-remove"><a href="" id="footer-link" class="uk-text-small uk-text-capitalize">Instagram</a></li>
@@ -282,7 +336,7 @@
                     </ul>
                 </div>
 
-                <div class="uk-width-1-1 uk-width-1-5@m">
+                <div class="uk-width-1-1 uk-width-1-5@m" hidden>
                     <span class="titlefooter">NEWSLETTER.</span>
                     <p class="uk-text-small uk-margin uk-text-justify">Get the latest information about our products and
                         promo just
@@ -364,7 +418,6 @@
             why_us: [],
             binefit: [],
             project: []
-
         },
         methods: {},
         created: function() {
@@ -373,8 +426,6 @@
                 .then(function(data) {
                     Index.slideshow = data.data.data;
                 });
-
-
         },
         mounted: function() {},
         updated: function() {},

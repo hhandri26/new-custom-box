@@ -21,10 +21,6 @@ class FrontController extends Controller
     {
         
     }
-
-    
-
-
     /**
      * Show the application dashboard.
      *
@@ -96,5 +92,4 @@ class FrontController extends Controller
         return view('front/signin');
 
     }
-    
 }

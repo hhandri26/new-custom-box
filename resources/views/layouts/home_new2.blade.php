@@ -36,12 +36,12 @@
                                         <span uk-icon=" icon: search;"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li hidden>
                                     <a class="uk-text-capitalize uk-padding-remove-left uk-padding-remove-right" href="#">
                                         <span uk-icon=" icon: user;"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li hidden>
                                     <a class="uk-text-capitalize uk-padding-remove-right uk-padding-remove-left" href="#">
                                         <span uk-icon=" icon: cart;"></span>(0)
                                     </a>
@@ -139,7 +139,7 @@
             <div class="uk-container">
                 <div class="uk-grid uk-margin-small-top uk-text-left" uk-grid>
 
-                    <div class="uk-width-1-2 uk-width-1-5@m">
+                    <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                         <span class="titlefooter">MY ACCOUNT.</span>
                         <ul class="uk-list uk-margin">
                             <li class="uk-margin-remove">
@@ -155,7 +155,7 @@
                         </ul>
                     </div>
 
-                    <div class="uk-width-1-2 uk-width-1-5@m">
+                    <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                         <span class="titlefooter">ABOUT US.</span>
                         <ul class="uk-list uk-margin">
                             <li class="uk-margin-remove"><a href="" id="footer-link"
@@ -167,7 +167,7 @@
                         </ul>
                     </div>
 
-                    <div class="uk-width-1-2 uk-width-1-5@m">
+                    <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                         <span class="titlefooter">HELP.</span>
                         <ul class="uk-list uk-margin">
                             <li class="uk-margin-remove"><a href="" id="footer-link"
@@ -180,7 +180,7 @@
                         </ul>
                     </div>
 
-                    <div class="uk-width-1-2 uk-width-1-5@m">
+                    <div class="uk-width-1-2 uk-width-1-5@m" hidden>
                         <span class="titlefooter">GET IN TOUCH.</span>
                         <ul class="uk-list uk-margin">
                             <li class="uk-margin-remove"><a href="" id="footer-link"
@@ -192,7 +192,7 @@
                         </ul>
                     </div>
 
-                    <div class="uk-width-1-1 uk-width-1-5@m">
+                    <div class="uk-width-1-1 uk-width-1-5@m" hidden>
                         <span class="titlefooter">NEWSLETTER.</span>
                         <p class="uk-text-small uk-margin uk-text-justify">Get the latest information about our products and
                             promo just

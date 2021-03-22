@@ -29,27 +29,38 @@
                                                 </div>
                                             </div>
                                             <div class="uk-card-body uk-text-center uk-padding-small uk-margin-top">
-                                                <span class="model-title">{{$row->title}}</span>
+                                                <span class="model-title">
+                                                    <span v-if="localStorage.lang == 'Eng'">
+                                                        {{$row->title}}
+                                                    </span>
+                                                    <span v-else>
+                                                        {{$row->title_id}}
+                                                    </span>
+                                                </span>
                                                 <p class="model-desc">
                                                     <span v-if="localStorage.lang == 'Eng'">
-
                                                         {{$row->suitable}} </span>
                                                     <span v-else>
-                                                        {{$row->suitable}}
+                                                        {{$row->suitable_id}}
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right">
-                                                <a href="{{route('models_detail')}}?id={{$row->id}}" id="model-link">MORE DETAILS</a>
+                                                <a href="{{route('models_detail')}}?id={{$row->id}}" id="model-link">
+                                                    <span v-if="localStorage.lang == 'Eng'">MORE DETAILS</span>
+                                                    <span v-else>KETERANGAN LEBIH LANJUT</span>
+                                                </a>
                                             </div>
                                             <div class="uk-card-footer uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right"
                                                 style="border-top: 0px;">
-                                                <a href="{{$row->link}}" target="_blank" id="model-link">BUY NOW</a>
+                                                <a href="{{$row->link}}" target="_blank" id="model-link">
+                                                    <span v-if="localStorage.lang == 'Eng'">BUY NOW</span>
+                                                    <span v-else>BELI SEKARANG</span>    
+                                                </a>
                                             </div>
                                         </div>
                                     </li>
                                     @endforeach
-
                                 </ul>
                             </div>
                             <div class="uk-visible@m">
@@ -70,19 +81,33 @@
         <div class="uk-container">
             <div class="uk-grid" uk-grid>
                 <div v-if="index==0" class="uk-width-1-1 uk-text-left@m uk-text-center uk-margin-large-top">
-                    <span class="header">WHY CUSTOMBOX INDONESIA.</span>
+                    <span class="header">
+                        <span v-if="localStorage.lang == 'Eng'">
+                            WHY CUSTOMBOX INDONESIA.
+                        </span>
+                        <span v-else>
+                            Mengapa Custombox Indonesia.
+                        </span>  
+                    </span>
                 </div>
                 <div class="uk-width-1-2@m uk-width-1-1" uk-scrollspy="cls: uk-animation-slide-left; repeat: false; delay:500;">
-                    <h1 class="header-why uk-margin-medium-left"><strong>@{{row.title_number}}</strong></h1>
+                    <h1 class="header-why uk-margin-medium-left"><strong>
+                        @{{row.title_number}}</strong></h1>
                     <div class="why-text">
-                        <span class="uk-text-large uk-text-bold">@{{row.title}}</span>
+                        <span class="uk-text-large uk-text-bold">
+                            <span v-if="localStorage.lang == 'Eng'">
+                                @{{row.title}}
+                            </span>
+                            <span v-else>
+                                @{{row.title_desc}}
+                            </span>
+                        </span>
                         <p class="uk-text-justify uk-visible@m">
                             <span v-if="localStorage.lang == 'Eng'">
                                 @{{row.desc_eng}}
                             </span>
                             <span v-else>
                                 @{{row.desc}}
-
                             </span>
                         </p>
                     </div>
@@ -104,38 +129,42 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="uk-section uk-padding-small-bottom section-why-primary">
         <div class="uk-container">
             <div class="uk-grid" uk-grid>
-
                 <div class="uk-width-1-1 uk-text-left@m uk-text-center">
-                    <span class="header">MORE BENEFITS.</span>
+                    <span class="header">
+                        <span v-if="localStorage.lang == 'Eng'">
+                            MORE BENEFITS.
+                            </span>
+                            <span v-else>
+                            LEBIH BANYAK MANFAAT.
+                        </span>
+                    </span>
                 </div>
                 <div class="uk-width-1-1">
 
                     <div class="uk-grid uk-margin-small-left uk-margin-medium-top" uk-grid>
-
                         <div v-for="row in binefit" class="uk-width-1-2 uk-width-1-4@m uk-transition-toggle" tabindex="0">
                             <img class="uk-transition-scale-up uk-transition-opaque uk-visible@m" v-bind:src="row.img" height="150" width="150" alt="">
                             <img class="uk-transition-scale-up uk-transition-opaque uk-hidden@m" v-bind:src="row.img" height="80" width="80" alt=""><br><br>
-                            <span class="benefits-text">@{{row.title}}</span>
+                            <span class="benefits-text aaa">
+                                <span v-if="localStorage.lang == 'Eng'">
+                                    @{{row.title}}
+                                </span>
+                                <span v-else>
+                                    @{{row.title_id}}
+                                </span>
+                            </span>
                             <p>
                                 <span v-if="localStorage.lang == 'Eng'">
                                     @{{row.desc_eng}}
                                 </span>
                                 <span v-else>
                                     @{{row.desc}}
-
                                 </span>
                             </p>
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -147,7 +176,14 @@
             <div class="uk-grid" uk-grid>
 
                 <div class="uk-width-1-1 uk-text-left@m uk-text-center">
-                    <span class="header">PAST PROJECTS.</span>
+                    <span class="header">
+                        <span v-if="localStorage.lang == 'Eng'">
+                            PAST PROJECTS.
+                        </span>
+                        <span v-else>
+                            Proyek masa lalu
+                        </span>
+                    </span>
                 </div>
                 <div class="uk-width-1-1 uk-margin-remove-top">
 
@@ -167,7 +203,14 @@
                                                 </div>
                                             </div>
                                             <div class="uk-card-body uk-text-center uk-padding-small uk-margin-top">
-                                                <span class="model-title">{{$row->title}}</span>
+                                                <span class="model-title">
+                                                    <span v-if="localStorage.lang == 'Eng'">
+                                                        {{$row->title}}
+                                                    </span>
+                                                    <span v-else>
+                                                        {{$row->title_id}}
+                                                    </span> 
+                                                </span>
                                             </div>
                                             <div class="uk-text-center uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right">
                                                 <p class="model-desc">
@@ -183,8 +226,6 @@
                                         </div>
                                     </li>
                                     @endforeach
-
-
                                 </ul>
                             </div>
                             <div class="uk-visible@m">
@@ -199,15 +240,22 @@
 
         </div>
     </div>
-
     <div class="uk-section section-why-primary">
         <div class="uk-container">
             <div class="uk-grid uk-text-center" uk-grid>
                 <div class="uk-width-1-1">
-                    <span class="section-shop">CREATE YOUR<br>CUSTOM PACKAGING TODAY</span>
+                    <span v-if="localStorage.lang == 'Eng'" class="section-shop">CREATE YOUR<br>CUSTOM PACKAGING TODAY</span>
+                    <span v-else class="section-shop">BUAT ANDA <br>KEMASAN KHUSUS HARI INI</span>
                 </div>
                 <div class="uk-width-1-1 uk-margin-top">
-                    <a href="{{route('contact')}}" id="shop-now">SHOP NOW</a>
+                    <a href="{{route('contact')}}" id="shop-now">
+                        <span v-if="localStorage.lang == 'Eng'">
+                            SHOP NOW
+                        </span>
+                        <span v-else>
+                            BERBELANJA SEKARANG
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -230,8 +278,6 @@
         methods: {},
         created: function() {
             // get slideshow
-
-
             axios.get("{{route('product_front')}}")
                 .then(function(data) {
                     Index2.product = data.data.data;

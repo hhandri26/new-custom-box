@@ -35,7 +35,6 @@ Route::get('/models_detail','FrontController@models_detail')->name('models_detai
 // menu
 Route::get('/checkout', 'FrontController@checkout')->name('checkout');
 
-
 Route::group(['middleware' => ['auth']], function () {
 	// return view('login/form_login');
 	Route::get('/admin', 'HomeController@check_login');
@@ -171,7 +170,5 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::get('/add_project', 'ScheduleController@add_project')->name('add_project');
 
 });
-
-
 
 
