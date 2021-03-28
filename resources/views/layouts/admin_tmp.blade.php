@@ -202,6 +202,7 @@ if ($user_id==1){
 
     
     <script src="{{asset('public/fab/js/jquery-fab-button.min.js')}}"></script>
+    <script src="{{asset('public/new/js/uikit.js')}}"></script>
     <script src="{{asset('public/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
     <script src="{{asset('public/pages/jquery.sweet-alert.init.js')}}"></script>
     <script src="{{asset('public/plugins/summernote/summernote.min.js')}}"></script>

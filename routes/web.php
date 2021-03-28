@@ -171,4 +171,27 @@ Route::group(['middleware' => 'admin'], function () {
 
 });
 
+// Article
+// shedule
+Route::group(['middleware' => 'admin'], function () {
+
+	Route::get('/admin_category_article', 'ArticleController@admin_category_article')->name('admin_category_article');
+	Route::get('/admin_category_article_form', 'ArticleController@admin_category_article_form')->name('admin_category_article_form');
+	Route::get('/admin_category_article_edit', 'ArticleController@admin_category_article_edit')->name('admin_category_article_edit');
+	Route::post('/admin_category_article_save', 'ArticleController@admin_category_article_save')->name('admin_category_article_save');
+	// 
+	Route::get('/admin_article', 'ArticleController@admin_article')->name('admin_article');
+	Route::get('/admin_article_form', 'ArticleController@admin_article_form')->name('admin_article_form');
+	Route::get('/admin_article_edit', 'ArticleController@admin_article_edit')->name('admin_article_edit');
+	Route::post('/admin_article_save', 'ArticleController@admin_article_save')->name('admin_article_save');
+
+	Route::get('/blog', 'ArticleController@blog')->name('blog');
+	Route::get('/blog_detail', 'ArticleController@blog_detail')->name('blog_detail');
+
+	Route::post('/search_blog', 'ArticleController@search_blog')->name('search_blog');
+
+
+});
+
+
 

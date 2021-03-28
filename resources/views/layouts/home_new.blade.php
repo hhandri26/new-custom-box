@@ -108,6 +108,12 @@
                                             </a>
                                         </li>
                                         <li>
+                                            <a class="uk-text-capitalize" href="{{route('blog')}}">
+                                                <span v-if="localStorage.lang == 'Eng'">Blog</span>
+                                                <span v-else>Blog</span>
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a class="uk-text-capitalize" href="{{route('contact')}}">
                                                 <span v-if="localStorage.lang == 'Eng'">Contact Us</span>
                                                 <span v-else>Hubungi kami</span>
@@ -176,6 +182,12 @@
                                 <a href="{{route('sample_custombox')}}">
                                     <span v-if="localStorage.lang == 'Eng'">Sample</span>
                                     <span v-else>Sampel</span>
+                                </a>
+                            </li>
+                            <li id="nav-divider">
+                                <a href="{{route('blog')}}">
+                                    <span v-if="localStorage.lang == 'Eng'">Blog</span>
+                                    <span v-else>Blog</span>
                                 </a>
                             </li>
                             <li id="nav-divider">
@@ -269,6 +281,12 @@
                                     <a class="uk-text-capitalize" href="{{route('sample_custombox')}}">
                                         <span v-if="localStorage.lang == 'Eng'">Sample</span>
                                         <span v-else>Sampel</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="uk-text-capitalize" href="{{route('blog')}}">
+                                        <span v-if="localStorage.lang == 'Eng'">Blog</span>
+                                        <span v-else>Blog</span>
                                     </a>
                                 </li>
                                 <li>
@@ -386,6 +404,7 @@
 <script src="{{asset('public/front/')}}/js/core/nav.js?ver=01042020"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD8544MK1X"></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=605e32b032910c0018e21914&product=inline-share-buttons' async='async'></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

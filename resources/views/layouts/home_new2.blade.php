@@ -70,6 +70,9 @@
                                     <a class="uk-text-capitalize" href="{{route('sample_custombox')}}">Sample</a>
                                 </li>
                                 <li>
+                                    <a class="uk-text-capitalize" href="{{route('blog')}}">Blog</a>
+                                </li>
+                                <li>
                                     <a class="uk-text-capitalize" href="{{route('contact')}}">Contact Us</a>
                                 </li>
                             </ul>
@@ -120,6 +123,7 @@
                             <li id="nav-divider"><a href="{{route('models')}}">Model</a></li>
                             <li id="nav-divider"><a href="{{route('gallery_custombox')}}">Gallery</a></li>
                             <li id="nav-divider"><a href="{{route('sample_custombox')}}">Sample</a></li>
+                            <li id="nav-divider"><a href="{{route('blog')}}">Blog</a></li>
                             <li id="nav-divider"><a href="{{route('contact')}}">Contact Us</a></li>
                         </ul>
                         <span class="uk-position-bottom offcanvas-footer uk-text-center">Copyright. 2020 Custombox
@@ -244,6 +248,7 @@
 <script src="{{asset('public/front/')}}/js/core/axios.min.js?ver=01042020"></script>
 <script src="{{asset('public/front/')}}/js/core/header.js?ver=01042020"></script>
 <script src="{{asset('public/front/')}}/js/core/nav.js?ver=01042020"></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=605e32b032910c0018e21914&product=inline-share-buttons' async='async'></script>
 <script>
     $(window).scroll(example);
 

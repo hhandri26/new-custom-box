@@ -162,6 +162,9 @@
                                             <a href="{{route('sample_custombox')}}">Sample</a>
                                         </li>
                                         <li>
+                                            <a href="{{route('blog')}}">Blog</a>
+                                        </li>
+                                        <li>
                                             <a href="{{route('contact')}}">Contact us</a>
                                         </li>
                                     </ul>
@@ -198,6 +201,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('sample_custombox')}}">Sample</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('blog')}}">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contact')}}">Contact us</a>

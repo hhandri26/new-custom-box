@@ -114,3 +114,27 @@ function AlertUpload(text,url,url_upload,obj_id){
                 }
             })
 }
+
+function AlertUpload2(text,url,url_upload,obj_id){
+    swal({
+               title: 'Apakah Anda Yakin',
+               text: text,
+               type: 'warning',
+               showCancelButton: true,
+               confirmButtonText: 'Ya, Save!',
+               cancelButtonText: 'No, cancel!',
+               confirmButtonClass: 'btn btn-success',
+               cancelButtonClass: 'btn btn-danger m-l-10',
+               buttonsStyling: false
+           }).then(function () {
+               CrudUpload2(url,url_upload,obj_id);
+           },function (dismiss) {
+               if (dismiss === 'cancel') {
+                   swal(
+                       'Cancelled',
+                       'Your imaginary file is safe :)',
+                       'error'
+                   )
+               }
+           })
+}

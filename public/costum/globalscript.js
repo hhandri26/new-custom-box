@@ -79,6 +79,40 @@ function CrudAjax2(url){
 }
 
 
+function CrudUpload2(url, url_upload, obj_id){
+
+    var CSRF_TOKEN  = $('meta[name="csrf-token"]').attr('content');
+    var formData    = $('#formData').serialize();
+    var name           = $('#name').val();
+    var description    = $('#description').val();
+    var category       = $('#category').val();
+    var seo_description= $('#seo_description').val();
+    var seo_keyword    = $('#seo_keyword').val();
+      $.ajax({
+          url: url,
+          type: 'POST',
+          data: {
+                    _token: CSRF_TOKEN, 
+                    data:formData,
+                    name:name,
+                    description:description,
+                    category:category,
+                    seo_description:seo_description,
+                    seo_keyword:seo_keyword
+                },
+          dataType: 'JSON',
+          success: function (R) {
+              if (R.msg_type=='success'){
+                    var prefik  =R.sid;
+                    upload(obj_id,prefik, url_upload);
+              }else{
+                  Alert(R.msg_type,R.msg);
+              }
+
+          }
+
+      });
+}
 function CrudUpload1(url, url_upload, obj_id){
     var CSRF_TOKEN  = $('meta[name="csrf-token"]').attr('content');
         $.ajax({
